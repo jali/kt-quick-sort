@@ -14,9 +14,20 @@ class QuickSort {
                         loop(
                                 list.drop(1),
                                 pivot,
-                                PairOfLists(listOf(list.first()) + result.first, result.second))
+                                PairOfLists(
+                                        listOf(list.first()) + result.first,
+                                        result.second
+                                )
+                        )
                     } else {
-                        loop(list.drop(1), pivot, PairOfLists(result.first, listOf(list.first()) + result.second))
+                        loop(
+                                list.drop(1),
+                                pivot,
+                                PairOfLists(
+                                        result.first,
+                                        listOf(list.first()) + result.second
+                                )
+                        )
                     }
         }
         return loop(list, pivot, PairOfLists(listOf(), listOf()))
@@ -33,7 +44,7 @@ class QuickSort {
     }
 
     fun quickSort(l: List<Int>): List<Int> {
-        if(l.isEmpty() || l.drop(1).isEmpty()) {
+        if (l.isEmpty() || l.drop(1).isEmpty()) {
             return l
         } else {
             val pivot = l.first()
