@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     println("pivot is: $p")
 
     val res = partition(l, p)
-    println("Result: $res!")
+    println("Result: $res")
 
     val sorted = quickSort(l)
     println("Sorted: $sorted")

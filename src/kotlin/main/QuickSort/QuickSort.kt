@@ -41,4 +41,22 @@ class QuickSort {
             return quickSort(partitions.first) + pivot + quickSort(partitions.second)
         }
     }
+
+    companion object {
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val quickSort = QuickSort()
+            val l = quickSort.randomizeList(10)
+            println("Randomized list of 10: $l")
+
+            val p: Int = l.first()
+            println("Pivot is: $p")
+
+            val res = quickSort.partition(l, p)
+            println("Result: $res")
+
+            val sorted = quickSort.quickSort(l)
+            println("Sorted: $sorted")
+        }
+    }
 }
