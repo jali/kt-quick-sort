@@ -1,5 +1,7 @@
 package QuickSort
 
+import java.util.*
+
 typealias PairOfLists = Pair<List<Int>, List<Int>>
 
 class QuickSort {
@@ -18,5 +20,15 @@ class QuickSort {
                     }
         }
         return loop(list, pivot, PairOfLists(listOf(), listOf()))
+    }
+
+    fun randomizeList(n: Int): List<Int> {
+        fun randIt(n: Int, res: List<Int>): List<Int> = when {
+            n == 0 -> res
+            else -> {
+                randIt(n-1, listOf(Random().nextInt(1000)) + res)
+            }
+        }
+        return randIt(n, listOf()).toList()
     }
 }
