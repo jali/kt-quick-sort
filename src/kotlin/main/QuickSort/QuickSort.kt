@@ -31,4 +31,14 @@ class QuickSort {
         }
         return randIt(n, listOf()).toList()
     }
+
+    fun quickSort(l: List<Int>): List<Int> {
+        if(l.isEmpty() || l.drop(1).isEmpty()) {
+            return l
+        } else {
+            val pivot = l.first()
+            val partitions = partition(l.drop(1), pivot)
+            return quickSort(partitions.first) + pivot + quickSort(partitions.second)
+        }
+    }
 }
